@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 import store from './store/store.js'
 import Home from './pages/Home.jsx'
 import Login from './pages/Login.jsx'
-import AuthLayouts from './components/AuthLayouts.jsx'
+import Protected from './components/AuthLayouts.jsx'
 import Signup from './pages/Signup.jsx'
 import AllPosts from './pages/AllPosts.jsx'
 import AddPost from './pages/AddPost.jsx'
@@ -25,49 +25,49 @@ const router = createBrowserRouter([{
     {
       path: '/login',
       element: (
-        <AuthLayouts authentication = {false}>
+        <Protected authentication = {false}>
           <Login />
-        </AuthLayouts>
+        </Protected>
       )
     },
     {
       path: '/signup',
       element: (
-        <AuthLayouts authentication = {false}>
+        <Protected authentication = {false}>
           <Signup />
-        </AuthLayouts>
+        </Protected>
       )
     },
     {
       path: '/all-posts',
       element: (
-        <AuthLayouts authentication = {true}> {/* only logged in ones can see the products */}
+        <Protected authentication = {true}> {/* only logged in ones can see the products */}
           <AllPosts />
-        </AuthLayouts>
+        </Protected>
       )
     },
     {
       path: '/add-posts',
       element: (
-        <AuthLayouts authentication = {true}> {/* only logged in ones can see the products */}
+        <Protected authentication = {true}> {/* only logged in ones can see the products */}
           <AddPost />
-        </AuthLayouts>
+        </Protected>
       )
     },
     {
       path: '/edit-post/:slug',  // : = which post you want to go
       element: (
-        <AuthLayouts authentication = {true}> {/* only logged in ones can see the products */}
+        <Protected authentication = {true}> {/* only logged in ones can see the products */}
           <EditPost />
-        </AuthLayouts>
+        </Protected>
       )
     },
     {
       path: '/post/:slug',  // : = which post you want to go
       element: (
-        <AuthLayouts authentication = {true}> {/* only logged in ones can see the products */}
+        <Protected authentication = {true}> {/* only logged in ones can see the products */}
           <Post />
-        </AuthLayouts>
+        </Protected>
       )
     },
   ]
