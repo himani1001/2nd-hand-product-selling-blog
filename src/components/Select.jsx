@@ -33,4 +33,4 @@ const Select = ({
     )
 }
 
-export default Select.forwardRef(Select)
+export default React.forwardRef(Select)
