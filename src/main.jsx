@@ -25,7 +25,7 @@ const router = createBrowserRouter([{
     {
       path: '/login',
       element: (
-        <Protected authentication = {false}>
+        <Protected authentication={false}>
           <Login />
         </Protected>
       )
@@ -33,7 +33,7 @@ const router = createBrowserRouter([{
     {
       path: '/signup',
       element: (
-        <Protected authentication = {false}>
+        <Protected authentication={false}>
           <Signup />
         </Protected>
       )
@@ -41,7 +41,7 @@ const router = createBrowserRouter([{
     {
       path: '/all-posts',
       element: (
-        <Protected authentication = {true}> {/* only logged in ones can see the products */}
+        <Protected authentication={true}> {/* only logged in ones can see the products */}
           <AllPosts />
         </Protected>
       )
@@ -49,23 +49,23 @@ const router = createBrowserRouter([{
     {
       path: '/add-posts',
       element: (
-        <Protected authentication = {true}> {/* only logged in ones can see the products */}
+        <Protected authentication={true}>
           <AddPost />
         </Protected>
       )
     },
     {
-      path: '/edit-post/:slug',  // : = which post you want to go
+      path: '/edit-post/:slug',  // : = which post you want to go, this :slug is the reason why we are able to grab a slug from useParams in Post.jsx
       element: (
-        <Protected authentication = {true}> {/* only logged in ones can see the products */}
+        <Protected authentication={true}>
           <EditPost />
         </Protected>
       )
     },
     {
-      path: '/post/:slug',  // : = which post you want to go
+      path: '/post/:slug',
       element: (
-        <Protected authentication = {true}> {/* only logged in ones can see the products */}
+        <Protected authentication={true}>
           <Post />
         </Protected>
       )
@@ -76,7 +76,7 @@ const router = createBrowserRouter([{
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-    <RouterProvider router = {router} />
+      <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>,
 )
